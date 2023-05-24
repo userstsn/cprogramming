@@ -248,3 +248,20 @@ printf("%d is prime",n);
 }
 exit(0);
 }
+
+
+//to demostrate different components of function..........................................................
+#include<stdio.h>
+void main()
+{
+int a,b,s;
+printf("n Enter the numbers:");
+scanf("%d%d",&a, &b);
+s=sum(a,b);
+printf("The required sum is %d",s);
+}
+int sum(int x,int y)
+{
+return x+y;
+}
+
