@@ -1,4 +1,4 @@
-//sumofmatrix
+//sumofmatrix................................................................................
 #include <stdio.h>
 #define row 2
 #define col 2
@@ -56,7 +56,7 @@ int main()
 
 
 
-//armstong
+//armstong............................................................
 #include<stdio.h>
 int main()
 {
@@ -82,7 +82,7 @@ int main()
 }
 
 
-//factorial
+//factorial.................................................
 //program to find factorial number
 #include<stdio.h>
 int main()
@@ -103,7 +103,7 @@ int main()
 
 
 
-//rooots
+//rooots.....................................................
 #include<stdio.h>
 #include<math.h>
 
@@ -130,7 +130,7 @@ void main()
 }
 
 
-//transpose
+//transpose...........................................................
 #include <stdio.h>
 #define row 2
 #define col 2
@@ -179,7 +179,7 @@ int main()
 }
 
 
-//fibonachi
+//fibonachi.................................................................
 
 #include <stdio.h>
 
@@ -200,7 +200,7 @@ int main()
     return 0;
 }
 
-//factorialbyrecursive
+//factorialbyrecursive.................................................................
 
 #include <stdio.h>
 
@@ -226,7 +226,7 @@ int main()
 }
 
 
-//primecomposite
+//primecomposite................................................................
 
 //program to check prime number
 #include<stdio.h>
