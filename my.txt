@@ -369,3 +369,51 @@ int main()
     fclose(fp);
     return 0;
 }
+
+file handaling structure............................
+#include <stdio.h>
+
+    struct player
+    {
+        char name[30];
+        float height;
+
+    } data[5];
+
+
+int writerecords(struct player data1[])
+{
+   FILE *fptr;
+   int i;
+   fptr = fopen("./player.txt", "w" );
+   if (!fptr)
+   {
+    printf("Error in generating file");
+   }
+   for ( i = 0; i < 5; i++)
+   {
+  
+   fprintf(fptr,"name:- %s age:- %f\n",data1[i].name,data1[i].height);
+   }
+   fclose(fptr) ;
+   return 0;
+}
+
+int main()
+{
+    int i;
+
+
+    for ( i = 0; i < 5; i++)
+    {
+        printf("Enter Name and height of data %d",i+1);
+        scanf("%s %f",data[i].name,&data[i].height);
+    }
+
+    writerecords(data);
+
+
+    
+    
+    return 0;
+}
