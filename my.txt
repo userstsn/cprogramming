@@ -417,3 +417,56 @@ int main()
     
     return 0;
 }
+
+
+
+//employee binary.......................................................>4000000
+include <stdio.h>
+#include <stdlib.h>
+
+struct employee
+{
+    int id;
+    float salary;
+} data[100];
+
+int main()
+{
+    FILE *fptr;
+    int i, n;
+    fptr = fopen("./employee.txt", "w+b");
+    if (!fptr)
+    {
+        printf("Unable to open the file.\n");
+        return 1;
+    }
+
+    printf("Enter the number of employees: ");
+    scanf("%d", &n);
+
+    printf("Enter id and salary:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("Employee %d:\n", i + 1);
+        printf("ID: ");
+        scanf("%d", &data[i].id);
+        printf("Salary: ");
+        scanf("%f", &data[i].salary);
+    }
+
+    fwrite(&data, sizeof(struct employee), n, fptr);
+
+    rewind(fptr); 
+
+    fread(&data, sizeof(struct employee), n, fptr);
+    for (i = 0; i < n; i++)
+    {
+        if (data[i].salary >= 4000)
+        {
+            printf("ID: %d, Salary: %.2f\n", data[i].id, data[i].salary);
+        }
+    }
+
+    fclose(fptr);
+    return 0;
+}
