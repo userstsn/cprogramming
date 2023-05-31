@@ -420,7 +420,7 @@ int main()
 
 
 //emplyee file handaling...............................salary logic
-#include <stdio.h>
+include <stdio.h>
 #include <stdlib.h>
 
 struct employee
@@ -433,7 +433,7 @@ int main()
 {
     FILE *fptr;
     int i, n;
-    fptr = fopen("./employee.bin", "wb");
+    fptr = fopen("./employee.txt", "w+b");
     if (!fptr)
     {
         printf("Unable to open the file.\n");
@@ -455,14 +455,7 @@ int main()
 
     fwrite(&data, sizeof(struct employee), n, fptr);
 
-    fclose(fptr);
-
-    fptr = fopen("./employee.bin", "rb");
-    if (!fptr)
-    {
-        printf("Unable to open the file.\n");
-        return 1;
-    }
+    rewind(fptr); 
 
     fread(&data, sizeof(struct employee), n, fptr);
     for (i = 0; i < n; i++)
@@ -476,6 +469,7 @@ int main()
     fclose(fptr);
     return 0;
 }
+
 
 
 
