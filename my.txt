@@ -419,9 +419,8 @@ int main()
 }
 
 
-
-//employee binary.......................................................>4000000
-include <stdio.h>
+//emplyee file handaling...............................salary logic
+#include <stdio.h>
 #include <stdlib.h>
 
 struct employee
@@ -434,7 +433,7 @@ int main()
 {
     FILE *fptr;
     int i, n;
-    fptr = fopen("./employee.txt", "w+b");
+    fptr = fopen("./employee.bin", "wb");
     if (!fptr)
     {
         printf("Unable to open the file.\n");
@@ -456,7 +455,14 @@ int main()
 
     fwrite(&data, sizeof(struct employee), n, fptr);
 
-    rewind(fptr); 
+    fclose(fptr);
+
+    fptr = fopen("./employee.bin", "rb");
+    if (!fptr)
+    {
+        printf("Unable to open the file.\n");
+        return 1;
+    }
 
     fread(&data, sizeof(struct employee), n, fptr);
     for (i = 0; i < n; i++)
@@ -470,6 +476,7 @@ int main()
     fclose(fptr);
     return 0;
 }
+
 
 
 //switch case and memu driven.....................................
